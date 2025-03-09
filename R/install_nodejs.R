@@ -70,6 +70,8 @@ install_nodejs <- function(node_url = "https://nodejs.org/dist",
 
       if (base::version$arch[[1]] == "x86_64") {
         arch <- "x64"
+      } else if (base::version$arch[[1]] == "aarch64") {
+        arch <- "arm64"
       } else {
         #TODO: I think this has been fixed and isn't true. But double-check
         stop("Unfortunately this build machine is unsupported")
